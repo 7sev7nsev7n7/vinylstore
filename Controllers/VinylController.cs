@@ -20,14 +20,11 @@ namespace RecordStoreWebApi.Controllers
       await Context.SaveChangesAsync();
       return Ok("Saved");
     }
+
     [HttpGet]
     public IEnumerable<Vinyl> Get()
     {
-      List<Vinyl> vinyls = new List<Vinyl>();
-      vinyls.Add(new Vinyl { ID = 1, Name = "Yellow Submarine" });
-      vinyls.Add(new Vinyl { ID = 2, Name = "WITH_TEETH" });
-
-      return vinyls;
+      return Context.vinyls;
     }
   }
 }
