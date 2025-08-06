@@ -5,10 +5,10 @@ namespace RecordStoreWebApi.Data
 {
   public class ApplicationDbContext : DbContext
   {
+    public DbSet<Vinyl> vinyls { get; set; }
+
     public ApplicationDbContext(DbContextOptions options): base(options)
     {
     }
-
-    public DbSet<Vinyl> vinyls { get; set; }
   }
 }
